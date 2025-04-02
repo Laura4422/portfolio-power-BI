@@ -69,7 +69,7 @@ if page == "Présentation":
         Découvrez mes projets et mon expertise en Power BI !
         """)
     with col2:
-        st.image("profil.jpg", width=250)
+        st.image("profil.JPG", width=250)
 
 # Page Projets Power BI
 elif page == "Projets Power BI":
