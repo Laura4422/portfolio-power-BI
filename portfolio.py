@@ -76,7 +76,7 @@ elif page == "Projets Power BI":
     dashboards = {
         "🍷 Étude de marché sur le vin": "https://app.powerbi.com/view?r=eyJrIjoiOGYzMDI0MmEtM2E1Mi00ZDAwLTlhNWMtYTJmZmU0NTFmZDJkIiwidCI6IjM3NmIxOTc2LTQxZmEtNDc4OC05NWIzLWFmZGY3MDFlNzkyNyJ9",
         "💰 Analyse financière": "https://app.powerbi.com/view?r=eyJrIjoiM2MzODQ1ODItZTdmYy00NTcyLWEwYjctMThiN2Y4YWExMmE5IiwidCI6IjM3NmIxOTc2LTQxZmEtNDc4OC05NWIzLWFmZGY3MDFlNzkyNyJ9",
-        "🚴 Analyse des trajets Cyclistic": "https://app.powerbi.com/view?r=eyJrIjoiMzdhNzBkMDgtZjlkNS00ODNiLWFiYTAtNjdlYWY0OWMzZTUxIiwidCI6IjM3NmIxOTc2LTQxZmEtNDc4OC05NWIzLWFmZGY3MDFlNzkyNyJ9&pageName=e5b4ea2ba4ac445e5c06ion",
+        "🚴 Analyse des trajets Cyclistic": "https://app.powerbi.com/view?r=eyJrIjoiMzdhNzBkMDgtZjlkNS00ODNiLWFiYTAtNjdlYWY0OWMzZTUxIiwidCI6IjM3NmIxOTc2LTQxZmEtNDc4OC05NWIzLWFmZGY3MDFlNzkyNyJ9&pageName=e5b4ea2ba4ac445e5c06",
         "☄️ Analyse des météorites": "https://app.powerbi.com/view?r=eyJrIjoiNzVmMzY4MTYtMTU2NC00YjBlLTgxY2YtYzY0NzAzNDY4ZDgzIiwidCI6IjM3NmIxOTc2LTQxZmEtNDc4OC05NWIzLWFmZGY3MDFlNzkyNyJ9",
         "🎬 Analyse des films IMDB": "https://app.powerbi.com/view?r=eyJrIjoiYWRlM2ZmYzMtNjlhOS00NzgyLTk5NTEtNjA5ODEyNWJkNjczIiwidCI6IjM3NmIxOTc2LTQxZmEtNDc4OC05NWIzLWFmZGY3MDFlNzkyNyJ9"
     }
