@@ -3,10 +3,10 @@ from PIL import Image
 import streamlit.components.v1 as components
 import requests
 
-# Configuration de la page avec un fond personnalisé et animations
+# Configuration de la page
 st.set_page_config(page_title="Portfolio Power BI", page_icon="📊", layout="wide")
 
-# Définition du CSS pour un style original et élégant avec animations
+# Chargement du CSS personnalisé
 def load_css():
     css = """
     <style>
@@ -26,9 +26,6 @@ def load_css():
         .stButton>button:hover, .stDownloadButton>button:hover {
             background-color: #e91e63;
             transform: scale(1.05);
-        }
-        .sidebar .sidebar-content {
-            background-color: #f8bbd0;
         }
         .title {
             font-family: 'Playfair Display', serif;
@@ -58,15 +55,14 @@ if page == "Présentation":
     col1, col2 = st.columns([2, 1])
     with col1:
         st.write("""
-        🎯 **Je suis Laura Sébille**, cheffe de projets spécialisée en marketing, qu'il soit imprimé ou digital. Forte d'une expertise en gestion de projets, j’ai piloté des campagnes et stratégies marketing pour des marques variées, toujours avec l’ambition d’optimiser la performance et l’impact.
-        
-        📊 Passionnée par l’univers de la data et convaincue de sa puissance pour éclairer les décisions, j’ai suivi une formation à la Wild Code School pour devenir Data Analyste. Aujourd’hui, je fusionne mes compétences en marketing avec l’analyse de données pour créer des tableaux de bord interactifs et orientés business.
+        🎯 **Je suis Laura Sébille**, cheffe de projets spécialisée en marketing, qu'il soit imprimé ou digital. 
+        Passionnée par l’univers de la data, j’ai suivi une formation à la Wild Code School pour devenir Data Analyste.
         
         🔹 **Spécialisation :** Gestion de projets marketing & Data Analytics  
-        🔹 **Compétences :** Power BI, SQL, Python (Pandas, NumPy), Data Visualization, Storytelling data, Stratégie marketing digital et imprimé  
-        🔹 **Mon approche :** Allier créativité et rigueur analytique pour transformer les données en insights actionnables. Mon objectif est de permettre aux entreprises de prendre des décisions éclairées grâce à une visualisation intuitive et efficace des données.
+        🔹 **Compétences :** Power BI, SQL, Python (Pandas, NumPy), Data Visualization, Storytelling data  
+        🔹 **Objectif :** Transformer les données en insights actionnables pour des décisions éclairées.  
         
-        Découvrez mes projets et mon expertise en Power BI !
+        Découvrez mes projets en Power BI ci-dessous ! 🚀
         """)
     with col2:
         st.image("profil.JPG", width=250)
@@ -74,17 +70,17 @@ if page == "Présentation":
 # Page Projets Power BI
 elif page == "Projets Power BI":
     st.title("📊 Mes Projets Power BI")
-    st.write("Tous ces projets sont fictifs et ont été réalisés dans le cadre de ma formation à la Wild Code School.")
-    
-    # Dashboards Power BI
+    st.write("Projets réalisés dans le cadre de ma formation à la Wild Code School.")
+
+    # Dashboards Power BI mis à jour
     dashboards = {
-        "🔍 Étude de marché - Vin": "https://app.powerbi.com/reportEmbed?reportId=deb227d8-62fb-4ec3-aa2d-05b9cfe84047&autoAuth=true&ctid=376b1976-41fa-4788-95b3-afdf701e7927",
-        "📈 Analyse des ventes": "https://app.powerbi.com/reportEmbed?reportId=8dc8f6da-4a5e-4d6d-b9e9-d9f3519523a2&autoAuth=true&ctid=376b1976-41fa-4788-95b3-afdf701e7927",
-        "💳 Étude comportementale clients": "https://app.powerbi.com/reportEmbed?reportId=725a71b4-55aa-4ef7-b030-4c58dd6bcf72&autoAuth=true&ctid=376b1976-41fa-4788-95b3-afdf701e7927",
-        "🌍 Dashboard Impact Environnemental": "https://app.powerbi.com/reportEmbed?reportId=19c7a6c8-b6c3-4753-a342-ecce20097742&autoAuth=true&ctid=376b1976-41fa-4788-95b3-afdf701e7927",
-        "🛒 Analyse e-commerce": "https://app.powerbi.com/reportEmbed?reportId=e7decbe6-8816-42f2-bda2-951fdfb0066d&autoAuth=true&ctid=376b1976-41fa-4788-95b3-afdf701e7927"
+        "🍷 Étude de marché sur le vin": "https://app.powerbi.com/view?r=eyJrIjoiOGYzMDI0MmEtM2E1Mi00ZDAwLTlhNWMtYTJmZmU0NTFmZDJkIiwidCI6IjM3NmIxOTc2LTQxZmEtNDc4OC05NWIzLWFmZGY3MDFlNzkyNyJ9",
+        "💰 Analyse financière": "https://app.powerbi.com/view?r=eyJrIjoiM2MzODQ1ODItZTdmYy00NTcyLWEwYjctMThiN2Y4YWExMmE5IiwidCI6IjM3NmIxOTc2LTQxZmEtNDc4OC05NWIzLWFmZGY3MDFlNzkyNyJ9",
+        "🚴 Analyse des trajets Cyclistic": "https://app.powerbi.com/view?r=eyJrIjoiMzdhNzBkMDgtZjlkNS00ODNiLWFiYTAtNjdlYWY0OWMzZTUxIiwidCI6IjM3NmIxOTc2LTQxZmEtNDc4OC05NWIzLWFmZGY3MDFlNzkyNyJ9",
+        "☄️ Analyse des météorites": "https://app.powerbi.com/view?r=eyJrIjoiNzVmMzY4MTYtMTU2NC00YjBlLTgxY2YtYzY0NzAzNDY4ZDgzIiwidCI6IjM3NmIxOTc2LTQxZmEtNDc4OC05NWIzLWFmZGY3MDFlNzkyNyJ9",
+        "🎬 Analyse des films IMDB": "https://app.powerbi.com/view?r=eyJrIjoiYWRlM2ZmYzMtNjlhOS00NzgyLTk5NTEtNjA5ODEyNWJkNjczIiwidCI6IjM3NmIxOTc2LTQxZmEtNDc4OC05NWIzLWFmZGY3MDFlNzkyNyJ9"
     }
-    
+
     for title, link in dashboards.items():
         st.header(title)
         components.iframe(link, height=600)
@@ -94,7 +90,7 @@ elif page == "Mon CV":
     st.title("📄 Mon CV")
     st.write("Vous pouvez télécharger mon CV ci-dessous :")
     with open("mon_cv.pdf", "rb") as cv_file:
-        st.download_button("📥 Télécharger mon CV", cv_file, file_name="CV_TonNom.pdf", mime="application/pdf")
+        st.download_button("📥 Télécharger mon CV", cv_file, file_name="CV_Laura_Sebille.pdf", mime="application/pdf")
     st.write("### 🌟 Compétences :")
     st.write("✅ Power BI - Tableaux de bord interactifs")
     st.write("✅ Python - Pandas, NumPy")
@@ -109,13 +105,13 @@ elif page == "Contact":
     nom = st.text_input("💌 Nom")
     email = st.text_input("📧 Email")
     message = st.text_area("💬 Votre message")
-    
+
     if st.button("Envoyer 💖"):
         formspree_url = "https://formspree.io/f/xwplreag"
         data = {"name": nom, "email": email, "message": message}
         headers = {"Content-Type": "application/json"}
         response = requests.post(formspree_url, json=data, headers=headers)
-        
+
         if response.status_code == 200:
             st.success("Merci pour votre message ! Je vous répondrai rapidement.")
         else:
